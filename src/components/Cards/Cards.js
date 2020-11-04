@@ -1,6 +1,8 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
-import CardItem from './Card-item';
+import CardItem from '../Card-Item/Card-item';
+
+import './cards.scss';
 
 const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
 	if (!confirmed) {
@@ -11,21 +13,22 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
 		<div className='container'>
 			<Grid container spacing={3} justify='center'>
 				<CardItem
-					className='Infected'
+					className='infected'
+					style={{ backgroundColor: 'red' }}
 					cardTitle='Infected'
 					value={confirmed.value}
 					date={new Date(lastUpdate).toDateString()}
 					cardSubtitle='Number of Active Cases from COVID-19'
 				/>
 				<CardItem
-					className='Recovered'
+					className='recovered'
 					cardTitle='Recovered'
 					value={recovered.value}
 					date={new Date(lastUpdate).toDateString()}
 					cardSubtitle='Number of Active Cases from COVID-19'
 				/>
 				<CardItem
-					className='Deaths'
+					className='deaths'
 					cardTitle='Deaths'
 					value={deaths.value}
 					date={new Date(lastUpdate).toDateString()}

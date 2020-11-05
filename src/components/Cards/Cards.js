@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
-import CardItem from '../Card-Item/Card-item';
+import CardItem from './Card-Item/Card-item';
 
 import './cards.scss';
 

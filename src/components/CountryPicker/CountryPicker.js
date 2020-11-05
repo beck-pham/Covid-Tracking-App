@@ -23,7 +23,8 @@ const CountryPicker = ({ handleCountryChange }) => {
 				defaultValue=''
 				onChange={(event) => handleCountryChange(event.target.value)}
 			>
-				<option value='global'>Global</option>
+				{/* value set as empty initially because there is no country is chosen */}
+				<option value=''>Global</option>
 				{/* Populated all countries using map method */}
 				{fetchedCountries.map((country, id) => (
 					<option key={id} value={country}>

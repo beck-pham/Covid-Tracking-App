@@ -21,3 +21,9 @@
 	border-radius: 10px;
 	box-shadow: 10px 5px 5px gray;
 }
+
+@media (max-width: 770px) {
+	.card {
+		margin: 2% 0 !important;
+	}
+}

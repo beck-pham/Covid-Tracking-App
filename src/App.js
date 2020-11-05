@@ -13,6 +13,7 @@ class App extends React.Component {
 		data: {},
 		country: '',
 	};
+	k;
 
 	async componentDidMount() {
 		const data = await fetchData();
@@ -20,19 +21,22 @@ class App extends React.Component {
 	}
 
 	handleCountryChange = async (country) => {
-		console.log(country);
-		// fetch the data
+		const fetchedData = await fetchData(country);
+
+		this.setState({ data: fetchedData, country: country });
+
 		// set the state
 	};
 
 	render() {
-		const { data } = this.state;
+		const { data, country } = this.state;
 
 		return (
 			<div className='container'>
 				<Cards data={data} />
+				{/* Set handleCountryChange function as props for use */}
 				<CountryPicker handleCountryChange={this.handleCountryChange} />
-				<Chart />
+				<Chart data={data} country={country} />
 			</div>
 		);
 	}
